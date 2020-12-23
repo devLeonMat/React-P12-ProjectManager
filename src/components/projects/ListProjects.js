@@ -11,7 +11,9 @@ const ListProjects = () => {
 
     return (
         <ul className="listado-proyectos">
-            <Project />
+            {projects.map(value => (
+                <Project project={value}/>
+            ))}
         </ul>
 
     );
