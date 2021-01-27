@@ -4,10 +4,10 @@ import Task from "./Task";
 
 const ListTask = () => {
     const taskProject = [
-        {name: 'Elegir plataforma', status: false},
-        {name: 'Elegir colores', status: true},
-        {name: 'Elegir plataforma de pagos', status: false},
-        {name: 'Elegir hosting', status: true}
+        {id: 1, name: 'Elegir plataforma', status: false},
+        {id: 2, name: 'Elegir colores', status: true},
+        {id: 3, name: 'Elegir plataforma de pagos', status: false},
+        {id: 4, name: 'Elegir hosting', status: true}
     ];
 
     return (
@@ -18,7 +18,10 @@ const ListTask = () => {
                     taskProject.length === 0
                         ? (<li className="tarea"><p>No hay tareas</p></li>)
                         : taskProject.map(tk => (
-                            <Task task={tk}/>
+                            <Task
+                                key={tk.id}
+                                task={tk}
+                            />
                         ))
                 }
             </ul>
