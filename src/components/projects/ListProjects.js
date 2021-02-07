@@ -13,7 +13,7 @@ const ListProjects = () => {
     }, []);
 
     // check if projects container
-    if (projects.length === 0) return null;
+    if (projects.length === 0) return <p>No hay proyectos, comienza creando uno</p>;
 
 
     return (

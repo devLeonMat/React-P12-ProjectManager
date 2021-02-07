@@ -2,6 +2,8 @@ export const FORM_PROJECT = 'FORM_PROJECT';
 export const OBTAIN_PROJECT = 'OBTAIN_PROJECT';
 export const ADD_PROJECT = 'ADD_PROJECT';
 export const VALID_FORM = 'VALID_FORM';
+export const CURRENT_PROJECT = 'CURRENT_PROJECT';
+export const DELETE_PROJECT = 'DELETE_PROJECT';
 
 
 

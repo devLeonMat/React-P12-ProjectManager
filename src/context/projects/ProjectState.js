@@ -6,7 +6,9 @@ import {
     FORM_PROJECT,
     OBTAIN_PROJECT,
     ADD_PROJECT,
-    VALID_FORM
+    VALID_FORM,
+    CURRENT_PROJECT,
+    DELETE_PROJECT
 } from "../../types";
 
 
@@ -21,6 +23,7 @@ const ProjectState = props => {
         projects: [],
         form: false,
         errorForm: false,
+        project: null
     };
 
     // dispatch for actions
@@ -53,9 +56,26 @@ const ProjectState = props => {
 
     };
 
+    // valid form by errors
     const showError = () => {
         dispatch({
             type: VALID_FORM
+        })
+    };
+
+    // select the project
+    const currentProject = projectId => {
+        dispatch({
+            type: CURRENT_PROJECT,
+            payload: projectId
+        })
+    };
+
+    //  Delete project
+    const deleteProject = projectId => {
+        dispatch({
+            type: DELETE_PROJECT,
+            payload: projectId
         })
     };
 
@@ -65,10 +85,13 @@ const ProjectState = props => {
                 projects: state.projects,
                 form: state.form,
                 errorForm: state.errorForm,
+                project: state.project,
                 showForm,
                 obtainProjects,
                 addProject,
-                showError
+                showError,
+                currentProject,
+                deleteProject
             }}>
             {props.children}
         </ProjectContext.Provider>
